@@ -3,11 +3,11 @@
   "short_name": "Barnali Garments",
   "description": "Barnali Garments online store.",
 
-  "version": "1.0.2",
-  "version_code": 3,
+  "version": "1.0.3",
+  "version_code": 4,
 
   "start_url": "/",
-  "scope": "https://barnaligarments.dpdns.org/",
+  "scope": "/",
   "id": "/",
 
   "display": "standalone",
