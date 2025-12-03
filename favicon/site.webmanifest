@@ -79,7 +79,7 @@
     {
       "name": "Shop Now",
       "short_name": "Shop",
-      "url": "/products/",
+      "url": "/?next=/products",
       "icons": [
         {
           "src": "android-chrome-192x192.png",
@@ -91,7 +91,7 @@
     {
       "name": "My Orders",
       "short_name": "Orders",
-      "url": "/orders/history/",
+      "url": "/?next=/orders/history/",
       "icons": [
         {
           "src": "android-chrome-192x192.png",
