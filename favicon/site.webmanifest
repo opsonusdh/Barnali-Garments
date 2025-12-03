@@ -3,8 +3,8 @@
   "short_name": "Barnali Garments",
   "description": "Barnali Garments online store.",
 
-  "version": "1.0.3",
-  "version_code": 4,
+  "version": "1.0.3-test",
+  "version_code": 5,
 
   "start_url": "/",
   "scope": "/",
@@ -79,7 +79,7 @@
     {
       "name": "Shop Now",
       "short_name": "Shop",
-      "url": "/?next=/products",
+      "url": "https://barnaligarments.dpdns.org/products/",
       "icons": [
         {
           "src": "android-chrome-192x192.png",
