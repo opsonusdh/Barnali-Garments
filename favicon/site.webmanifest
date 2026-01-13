@@ -3,8 +3,8 @@
   "short_name": "Barnali Garments",
   "description": "Barnali Garments online store.",
 
-  "version": "1.1.5",
-  "version_code": 11,
+  "version": "1.1.6",
+  "version_code": 12,
 
   "start_url": "/Barnali-Garments/",
   "scope": "/Barnali-Garments/",
@@ -79,7 +79,7 @@
     {
       "name": "Shop Now",
       "short_name": "Shop",
-      "url": "/go/products",
+      "url": "/Barnali-Garments/go/products",
       "icons": [
         {
           "src": "android-chrome-192x192-mask.png",
@@ -91,7 +91,7 @@
     {
      "name": "Talk to Assistant",
       "short_name": "Assistant",
-      "url": "/go/ai/chat",
+      "url": "/Barnali-Garments/go/ai/chat",
       "icons": [
         {
           "src": "android-chrome-192x192-mask.png",
@@ -103,7 +103,7 @@
     {
       "name": "My Orders",
       "short_name": "Orders",
-      "url": "/go/orders/history",
+      "url": "/Barnali-Garments/go/orders/history",
       "icons": [
         {
           "src": "android-chrome-192x192-mask.png",
@@ -115,7 +115,7 @@
     {
       "name": "My Cart",
       "short_name": "Cart",
-      "url": "/go/cart",
+      "url": "/Barnali-Garments/go/cart",
       "icons": [
         {
           "src": "android-chrome-192x192-mask.png",
@@ -127,7 +127,7 @@
     {
      "name": "My Wishlist",
       "short_name": "Wishlist",
-      "url": "/go/wishlist",
+      "url": "/Barnali-Garments/go/wishlist",
       "icons": [
         {
           "src": "android-chrome-192x192-mask.png",
