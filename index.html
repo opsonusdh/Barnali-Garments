@@ -1,4 +1,4 @@
-<!--
+<!-- 
 Copyright (c) 2026 Barnali Garments
 
 
@@ -40,4 +40,72 @@ Barnali Garments
 Email: help.barnaligarments@gmail.com
 
 -->
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Barnali Garments</title><meta name="author" content="Subhraeep Halder"><meta name="google-site-verification" content="yq0lqq_vyppG3iYFh5bTtrQl4syMyw--lRuJL8O2Rtg" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"><link rel="shortcut icon" href="favicon/favicon.ico"><link rel="manifest" href="favicon/site.webmanifest"></head><body style="background-color: #000;"><video id="introVideo" src="logo_video.mp4" autoplay muted playsinline loop preload="auto" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: contain;"></video><script>const maintenanceURL = "https://barnaligarments.dpdns.org/_maintenance/";const liveURL = "https://barnaligarments.dpdns.org/";const startTime = performance.now();let loadTime, elapsed;(async function () {const params = new URLSearchParams(window.location.search);try {const res = await fetch(maintenanceURL, { cache: "no-store" });loadTime = performance.now();elapsed = loadTime - startTime; if(4000 - elapsed > 0) {await sleep(4000 - elapsed);}if(res.ok) {const data = await res.json().catch(() => null);if (data && data.active === true) {renderMaintenancePage(data.message || "Server Under Maintenance");return;}}if (params.has("go")) {let target = "/" + params.get("go");if (!target.startsWith("/") || target.includes("..")) {target = "/";}window.location.replace(liveURL + target);return;}window.location.replace(liveURL);} catch (err) {loadTime = performance.now();elapsed = loadTime - startTime;if(4000 - elapsed > 0) {await sleep(4000 - elapsed);}renderMaintenancePage("Server Under Maintenance");}})();function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms));}function renderMaintenancePage(msg) {fetch("maintenance_page.html").then(r => r.text()).then(html => {document.open();document.write(html);document.close();window.addEventListener("load", () => {const el = document.getElementById("reason");if(el){el.textContent = msg;}});});}</script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Barnali Garments</title><meta name="author" content="Subhraeep Halder"><meta name="google-site-verification" content="yq0lqq_vyppG3iYFh5bTtrQl4syMyw--lRuJL8O2Rtg" /><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png"><link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png"><link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"><link rel="shortcut icon" href="favicon/favicon.ico"><link rel="manifest" href="favicon/site.webmanifest"></head><body style="background-color: #000;"><video id="introVideo" src="logo_video.mp4" autoplay playsinline loop preload="auto" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: contain;"></video><script>
+const maintenanceURL = "https://barnaligarments.dpdns.org/_maintenance/";
+const liveURL = "https://barnaligarments.dpdns.org";
+const startTime = performance.now();
+let loadTime, elapsed;
+
+(async function () {
+  const path = window.location.pathname;
+  const params = new URLSearchParams(window.location.search);
+  try {
+    const res = await fetch(maintenanceURL, { cache: "no-store" });
+    loadTime = performance.now();
+    elapsed = loadTime - startTime;
+    if (4000 - elapsed > 0) {
+      await sleep(4000 - elapsed);
+    }
+    if (res.ok) {
+      const data = await res.json().catch(() => null);
+      if (data && data.active === true) {
+        renderMaintenancePage(data.message || "Server Under Maintenance");
+        return;
+      }
+    }
+    let target;
+    if (params.has("go")) {
+      if (param.get("go").startsWith("/")){
+        target = param.get("go");
+      } else {
+        target = "/" + params.get("go");
+      }
+      
+      if (!target.startsWith("/") || target.includes("..")) {
+        target = "/";
+      }
+      window.location.replace(liveURL + target);
+      return;
+    }
+
+    window.location.replace(liveURL);
+  } catch (err) {
+    loadTime = performance.now();
+    elapsed = loadTime - startTime;
+    if (4000 - elapsed > 0) {
+      await sleep(4000 - elapsed);
+    }
+    renderMaintenancePage("Server Under Maintenance");
+  }
+})();
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function renderMaintenancePage(msg) {
+  fetch("maintenance_page.html")
+    .then(r => r.text())
+    .then(html => {
+      document.open();
+      document.write(html);
+      document.close();
+      window.addEventListener("load", () => {
+        const el = document.getElementById("reason");
+        if (el) {
+          el.textContent = msg;
+        }
+      });
+    });
+}
+</script></body></html>
