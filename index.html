@@ -58,7 +58,14 @@ let loadTime, elapsed;
     }
     if (res.ok) {
       const data = await res.json().catch(() => null);
-      if (data && data.active === true) { renderMaintenancePage(data.message || "Server Under Maintenance");
+      if (data && data.active === true) { 
+       let msg;
+       if(!data.message || data.message === "N/A"){
+         msg = "Server Under Maintenance";
+       }else{
+         msg = data.message;
+        }
+        renderMaintenancePage(msg);
         return;
       }
     }
