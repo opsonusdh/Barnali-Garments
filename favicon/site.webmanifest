@@ -3,8 +3,8 @@
   "short_name": "Barnali Garments",
   "description": "Barnali Garments online store.",
 
-  "version": "1.1.7",
-  "version_code": 13,
+  "version_name": "1.1.7",
+  "manifest_version": 13,
 
   "start_url": "/Barnali-Garments/",
   "scope": "/Barnali-Garments/",
