@@ -91,7 +91,7 @@ let loadTime, elapsed;
     if (4000 - elapsed > 0) {
       await sleep(4000 - elapsed);
     }
-    renderMaintenancePage(err);
+    renderMaintenancePage(err?.message || String(err));
   }
 })();
 
